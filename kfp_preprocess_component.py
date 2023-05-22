@@ -10,10 +10,10 @@ def preprocess_op():
         image = 'samyumobi99/rp:latest',
         arguments = [],
         file_outputs = {
-            'x_train': '/app/xtrain.npyy',
-            'x_test' : '/app/xtest.npy',
-            'y_train': '/app/ytrain.npy',
-            'y_test': '/app/ytest.npy'
+            'x_train': '/app/x_train.npy',
+            'x_test' : '/app/x_test.npy',
+            'y_train': '/app/y_train.npy',
+            'y_test': '/app/y_test.npy'
         }
     )
 

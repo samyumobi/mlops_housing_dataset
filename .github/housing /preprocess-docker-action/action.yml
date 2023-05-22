@@ -1,5 +1,0 @@
-name: 'Data preprocessing'
-description: 'Process the data and record the time'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'

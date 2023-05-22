@@ -11,12 +11,12 @@ from kfp import compiler
     description= 'Calfornia Housing Pipeline'
 )
 def cal_pipeline():
-    p = preprocess_op()
+    _preprocess_op = preprocess_op()
 
 compiler.Compiler().compile(cal_pipeline, package_path='pipeline.yaml')
 
-client = kfp.Client(host = 'http://127.0.0.1:60029')
-client.create_run_from_pipeline_package('pipeline.yaml', arguments={'param': 'a', 'other_param': 2})
-client.create_run_from_pipeline_func('pipeline.yaml', arguments={'param': 'a', 'other_param': 2})
-
-client.create_run_from_pipeline_func(cal_pipeline,arguments={},experiment_name="my-experiment", run_name="test-run-1", namespace="kubeflow-user-example-com")
+client = kfp.Client()
+# client.create_run_from_pipeline_package('pipeline.yaml', arguments={'param': 'a', 'other_param': 2})
+# client.create_run_from_pipeline_func('pipeline.yaml', arguments={'param': 'a', 'other_param': 2})
+client.create_run_from_pipeline_func(cal_pipeline,arguments={})
+# client.create_run_from_pipeline_func(cal_pipeline,arguments={},experiment_name="my-experiment", run_name="test-run-1", namespace="kubeflow-user-example-com")
